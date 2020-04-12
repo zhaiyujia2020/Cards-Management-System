@@ -20,15 +20,15 @@ def new_card():
     print("-" * 50)
     print("新建名片")
     # 1.提示用户输入名片的详细信息
-    name = input("请输入姓名：")
-    phone = input("请输入电话：")
-    qq = input("请输入qq：")
-    email = input("请输入邮件：")
+    name_str = input("请输入姓名：")
+    phone_str = input("请输入电话：")
+    qq_str = input("请输入qq：")
+    email_str = input("请输入邮件：")
     # 2.使用用户输入信息建立一个名片字典
-    card_dic = {"name": name,
-                "phone": phone,
-                "qq": qq,
-                "email": email
+    card_dic = {"name": name_str,
+                "phone": phone_str,
+                "qq": qq_str,
+                "email": email_str
                 }
     # 3.将名片字典添加到名片列表中
     card_list.append(card_dic)
@@ -36,7 +36,7 @@ def new_card():
     print("-" * 50)
     print(card_list)
     print("-" * 50)
-    print("%s的名片新建成功" % name)
+    print("%s的名片新建成功" % name_str)
     print("-" * 50)
 
 
