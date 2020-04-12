@@ -11,13 +11,13 @@ while True:
     if option_str in ["1", "2", "3"]:
         # TODO(翟羽佳) 1：新建名片
         if option_str == "1":
-            pass
+            cards_tools.new_card()
         # TODO（翟羽佳） 2：显示全部
         elif option_str == "2":
-            pass
+            cards_tools.show_all()
         # TODO（翟羽佳） 3：查询名片
         elif option_str == "3":
-            pass
+            cards_tools.search_card()
     # 输入0，退出名片系统
     elif option_str == "0":
         print("欢迎再次使用【名片管理系统】")
