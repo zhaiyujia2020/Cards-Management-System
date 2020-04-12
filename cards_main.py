@@ -9,7 +9,7 @@ while True:
 
     # 输入1、2、3，执行相应的名片操作
     if option_str in ["1", "2", "3"]:
-        # TODO(翟羽佳) 1：新建名片
+        # 1：新建名片
         if option_str == "1":
             cards_tools.new_card()
         # TODO（翟羽佳） 2：显示全部
