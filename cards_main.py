@@ -12,7 +12,7 @@ while True:
         # 1：新建名片
         if option_str == "1":
             cards_tools.new_card()
-        # TODO（翟羽佳） 2：显示全部
+        # 2：显示全部
         elif option_str == "2":
             cards_tools.show_all()
         # TODO（翟羽佳） 3：查询名片

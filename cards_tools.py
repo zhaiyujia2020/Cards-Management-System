@@ -43,8 +43,22 @@ def new_card():
 def show_all():
     """显示全部"""
     print("-" * 50)
-    print("显示全部")
-
+    # 1.未查询到结果，对用户进行提示
+    if len(card_list) == 0:
+        print("未查询到结果")
+        print("-" * 50)
+        return
+    # 2.查询到结果，以类似列表形式整齐漂亮的打印出全部名片内容
+    print("显示全部名片")
+    print("-" * 50)
+    # 打印表头
+    for card_list_title in ["姓名", "电话", "QQ", "邮件"]:
+        print(card_list_title, end="\t\t")
+    print("")
+    # 遍历名片列表依次输出字典信息
+    for card_dic in card_list:
+        print("%s\t\t%s\t\t%s\t\t%s\t\t" % (card_dic["name"], card_dic["phone"], card_dic["qq"], card_dic["email"]))
+    print("-" * 50)
 
 def search_card():
     """查询名片"""
