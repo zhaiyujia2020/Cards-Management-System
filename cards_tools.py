@@ -64,3 +64,25 @@ def search_card():
     """查询名片"""
     print("-" * 50)
     print("查询名片")
+    print("-" * 50)
+    # 1.提示用户输入要查询的名片姓名
+    find_name = input("请输入您要查询的名片姓名：")
+    # 2。遍历名片列表，搜索要查询的名片姓名，如果存在，打印相关信息，如果不存在，提示用户不存在
+    for card_dic in card_list:
+        if find_name == card_dic["name"]:
+            # 打印表头
+            print("-" * 50)
+            for card_list_title in ["姓名", "电话", "QQ", "邮件"]:
+                print(card_list_title, end="\t\t")
+            print("")
+            print("-" * 50)
+            # 打印查询到的名片的相关信息
+            print("%s\t\t%s\t\t%s\t\t%s\t\t" % (card_dic["name"], card_dic["phone"], card_dic["qq"], card_dic["email"]))
+            print("-" * 50)
+            # TODO(翟羽佳) 针对找到的名片执行修改删除操作
+            break
+    else:
+        print("-" * 50)
+        print("您要查询的%s用户不存在" % find_name)
+        print("-" * 50)
+
