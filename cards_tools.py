@@ -79,10 +79,29 @@ def search_card():
             # 打印查询到的名片的相关信息
             print("%s\t\t%s\t\t%s\t\t%s\t\t" % (card_dic["name"], card_dic["phone"], card_dic["qq"], card_dic["email"]))
             print("-" * 50)
-            # TODO(翟羽佳) 针对找到的名片执行修改删除操作
+            # 针对找到的名片执行修改删除操作
+            deal_card(card_dic)
             break
     else:
         print("-" * 50)
         print("您要查询的%s用户不存在" % find_name)
         print("-" * 50)
+
+
+def deal_card(card_dic):
+    # 对找到的名片执行修改删除操作
+    search_option = input("请选择要执行的操作 [1]修改 [2]删除 [其他任意键]返回上级菜单：")
+    if search_option == "1":
+        # 对查询到的名片进行修改操作
+        card_dic["name"] = input("姓名：")
+        card_dic["phone"] = input("电话：")
+        card_dic["qq"] = input("qq:")
+        card_dic["email"] = input("邮箱：")
+        print("对查询到的名片进行修改操作")
+    elif search_option == "2":
+        # 对查询到的名片进行删除操作
+        card_list.remove(card_dic)
+        print("删除名片成功！")
+
+
 
