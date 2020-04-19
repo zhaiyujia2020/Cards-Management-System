@@ -60,6 +60,7 @@ def show_all():
         print("%s\t\t%s\t\t%s\t\t%s\t\t" % (card_dic["name"], card_dic["phone"], card_dic["qq"], card_dic["email"]))
     print("-" * 50)
 
+
 def search_card():
     """查询名片"""
     print("-" * 50)
@@ -89,14 +90,18 @@ def search_card():
 
 
 def deal_card(card_dic):
+    """处理查找到的名片
+
+    :param card_dic:查找到的名片
+    """
     # 对找到的名片执行修改删除操作
     search_option = input("请选择要执行的操作 [1]修改 [2]删除 [其他任意键]返回上级菜单：")
     if search_option == "1":
         # 对查询到的名片进行修改操作
-        card_dic["name"] = input("姓名：")
-        card_dic["phone"] = input("电话：")
-        card_dic["qq"] = input("qq:")
-        card_dic["email"] = input("邮箱：")
+        card_dic["name"] = input_card_info(card_dic["name"], "姓名[直接回车不修改]：")
+        card_dic["phone"] = input_card_info(card_dic["phone"], "电话[直接回车不修改]：")
+        card_dic["qq"] = input_card_info(card_dic["qq"], "qq[直接回车不修改]:")
+        card_dic["email"] = input_card_info(card_dic["email"], "邮箱[直接回车不修改]：")
         print("对查询到的名片进行修改操作")
     elif search_option == "2":
         # 对查询到的名片进行删除操作
@@ -104,4 +109,19 @@ def deal_card(card_dic):
         print("删除名片成功！")
 
 
+def input_card_info(dic_value, input_tips):
+    """输入名片信息
+
+    :param dic_value:名片字典中原有的值
+    :param input_tips:输入的提示文字
+    :return:如果用户有输入内容，返回输入内容；否则，返回名片字典中原有的值
+    """
+    # 1.获取用户输入内容
+    result_str = input(input_tips)
+    # 2.针对用户的输入进行判断，如果用户输入了，返回输入结果
+    if len(result_str) > 0:
+        return result_str
+    # 3.如果用户没有输入，返回字典的中原有的值
+    else:
+        return dic_value
 

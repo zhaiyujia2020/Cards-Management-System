@@ -15,7 +15,7 @@ while True:
         # 2：显示全部
         elif option_str == "2":
             cards_tools.show_all()
-        # TODO（翟羽佳） 3：查询名片
+        # 3：查询名片
         elif option_str == "3":
             cards_tools.search_card()
     # 输入0，退出名片系统
